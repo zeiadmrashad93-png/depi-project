@@ -95,12 +95,9 @@ namespace befit.api.Controllers
         [Route("{id}")]
         public async Task<IActionResult> Delete([FromRoute] int id)
         {
-            MenuItemDeleteDto? deletedMenuItem = await _menuItemsService.DeleteMenuItem(id);
+            await _menuItemsService.DeleteMenuItem(id);
 
-            if (deletedMenuItem == null)
-                return NotFound();
-
-            return Ok(deletedMenuItem);
+            return NoContent();
         }
     }
 }

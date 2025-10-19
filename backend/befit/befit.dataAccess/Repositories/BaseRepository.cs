@@ -27,14 +27,12 @@ namespace befit.dataAccess.Repositories
            await dbSet.AddAsync(entity);
         }
 
-        public async Task<TEntity?> Delete(int id)
+        public async Task Delete(int id)
         {
             TEntity? entityToDelete = await dbSet.FindAsync(id);
 
             if (entityToDelete != null)
                 dbSet.Remove(entityToDelete);
-
-            return entityToDelete;
         }
 
         public async Task<IEnumerable<TResult>> GetAll<TResult>(IBaseSpecification<TEntity, TID, TResult> specification)

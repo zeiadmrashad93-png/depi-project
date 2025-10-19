@@ -150,7 +150,7 @@ namespace befit.application.Services
             throw new NotImplementedException();
         }
 
-        public Task<MenuItemDeleteDto?> DeleteMenuItem(int id)
+        public Task DeleteMenuItem(int id)
         {
             throw new NotImplementedException();
         }
