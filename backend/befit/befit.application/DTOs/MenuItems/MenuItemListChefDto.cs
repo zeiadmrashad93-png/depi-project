@@ -8,5 +8,9 @@ namespace befit.application.DTOs.MenuItems
 {
     public class MenuItemListChefDto
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public TimeSpan PreparationTime { get; set; }
+        public string Picture { get; set; }
     }
 }

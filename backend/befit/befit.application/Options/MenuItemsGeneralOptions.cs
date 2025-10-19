@@ -9,6 +9,7 @@ namespace befit.application.Options
 {
     public abstract class MenuItemsGeneralOptions : IOptions
     {
+        public int CategoryId { get; set; }
         public int PageNo { get; set; }
         public int ItemsPerPage { get; set; }
         public string? SortBy { get; set; }

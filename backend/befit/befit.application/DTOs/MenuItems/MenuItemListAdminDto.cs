@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using befit.core.Entities;
 
 namespace befit.application.DTOs.MenuItems
 {
     public class MenuItemListAdminDto
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int CategoryId { get; set; }
+        public decimal Price { get; set; }
+        public string Picture { get; set; }
     }
 }

@@ -9,7 +9,6 @@ namespace befit.application.Options
 {
     public class MenuItemsUserOptions : MenuItemsGeneralOptions
     {
-        public int CategoryId { get; set; }
         public int? MaxCalories { get; set; }
         public int? MinCalories { get; set; }
         public int? MaxCarbohydrates { get; set; }

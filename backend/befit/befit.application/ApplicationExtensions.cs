@@ -13,6 +13,8 @@ namespace befit.application
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
+            services.AddScoped<IFileService, IFileService>();
+
             services.AddScoped<IMenuItemsService, MenuItemsService>();
 
             return services;

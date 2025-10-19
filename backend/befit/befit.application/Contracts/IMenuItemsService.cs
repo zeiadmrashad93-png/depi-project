@@ -18,6 +18,6 @@ namespace befit.application.Contracts
         Task<IEnumerable<MenuItemListChefDto>> GetMenuItemsListForChef(MenuItemsChefOptions options);
         Task<MenuItemInsertResponseDto> CreateNewMenuItem(MenuItemInsertRequestDto menuItemInsertRequestDto);
         Task<MenuItemUpdateDto?> UpdateMenuItem(MenuItemUpdateDto menuItemUpdateDto);
-        Task<MenuItemDeleteDto?> DeleteMenuItem(MenuItemDeleteDto menuItemDeleteDto);
+        Task<MenuItemDeleteDto?> DeleteMenuItem(int id);
     }
 }

@@ -7,52 +7,8 @@
       "RelativeMoniker": "D:0:0:{F9417DB9-FDD6-4271-AF69-4D7E8AC1D7B8}|befit.application\\befit.application.csproj|solutionrelative:befit.application\\services\\menuitemsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F9417DB9-FDD6-4271-AF69-4D7E8AC1D7B8}|befit.application\\befit.application.csproj|d:\\befit\\backend\\befit\\befit.application\\contracts\\imenuitemsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F9417DB9-FDD6-4271-AF69-4D7E8AC1D7B8}|befit.application\\befit.application.csproj|solutionrelative:befit.application\\contracts\\imenuitemsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A47F0129-D794-4FFD-8224-AF91627ACF62}|befit.api\\befit.api.csproj|d:\\befit\\backend\\befit\\befit.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A47F0129-D794-4FFD-8224-AF91627ACF62}|befit.api\\befit.api.csproj|solutionrelative:befit.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A47F0129-D794-4FFD-8224-AF91627ACF62}|befit.api\\befit.api.csproj|d:\\befit\\backend\\befit\\befit.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A47F0129-D794-4FFD-8224-AF91627ACF62}|befit.api\\befit.api.csproj|solutionrelative:befit.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DBD06F4F-37AA-40D8-9CDC-6E56DE02C01E}|befit.dataAccess\\befit.dataAccess.csproj|d:\\befit\\backend\\befit\\befit.dataaccess\\dataaccessextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DBD06F4F-37AA-40D8-9CDC-6E56DE02C01E}|befit.dataAccess\\befit.dataAccess.csproj|solutionrelative:befit.dataaccess\\dataaccessextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51C5BDE4-5517-4B69-A232-0C457A68CA40}|befit.core\\befit.core.csproj|d:\\befit\\backend\\befit\\befit.core\\builders\\specificationbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51C5BDE4-5517-4B69-A232-0C457A68CA40}|befit.core\\befit.core.csproj|solutionrelative:befit.core\\builders\\specificationbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51C5BDE4-5517-4B69-A232-0C457A68CA40}|befit.core\\befit.core.csproj|d:\\befit\\backend\\befit\\befit.core\\builders\\menuspecificationbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51C5BDE4-5517-4B69-A232-0C457A68CA40}|befit.core\\befit.core.csproj|solutionrelative:befit.core\\builders\\menuspecificationbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51C5BDE4-5517-4B69-A232-0C457A68CA40}|befit.core\\befit.core.csproj|d:\\befit\\backend\\befit\\befit.core\\expressionhelpers\\expressionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51C5BDE4-5517-4B69-A232-0C457A68CA40}|befit.core\\befit.core.csproj|solutionrelative:befit.core\\expressionhelpers\\expressionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51C5BDE4-5517-4B69-A232-0C457A68CA40}|befit.core\\befit.core.csproj|d:\\befit\\backend\\befit\\befit.core\\contracts\\ispecificationbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51C5BDE4-5517-4B69-A232-0C457A68CA40}|befit.core\\befit.core.csproj|solutionrelative:befit.core\\contracts\\ispecificationbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51C5BDE4-5517-4B69-A232-0C457A68CA40}|befit.core\\befit.core.csproj|d:\\befit\\backend\\befit\\befit.core\\specifications\\menuitemspecification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51C5BDE4-5517-4B69-A232-0C457A68CA40}|befit.core\\befit.core.csproj|solutionrelative:befit.core\\specifications\\menuitemspecification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51C5BDE4-5517-4B69-A232-0C457A68CA40}|befit.core\\befit.core.csproj|d:\\befit\\backend\\befit\\befit.core\\specifications\\basespecification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51C5BDE4-5517-4B69-A232-0C457A68CA40}|befit.core\\befit.core.csproj|solutionrelative:befit.core\\specifications\\basespecification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DBD06F4F-37AA-40D8-9CDC-6E56DE02C01E}|befit.dataAccess\\befit.dataAccess.csproj|d:\\befit\\backend\\befit\\befit.dataaccess\\repositories\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DBD06F4F-37AA-40D8-9CDC-6E56DE02C01E}|befit.dataAccess\\befit.dataAccess.csproj|solutionrelative:befit.dataaccess\\repositories\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A47F0129-D794-4FFD-8224-AF91627ACF62}|befit.api\\befit.api.csproj|d:\\befit\\backend\\befit\\befit.api\\controllers\\menuitemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A47F0129-D794-4FFD-8224-AF91627ACF62}|befit.api\\befit.api.csproj|solutionrelative:befit.api\\controllers\\menuitemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F9417DB9-FDD6-4271-AF69-4D7E8AC1D7B8}|befit.application\\befit.application.csproj|d:\\befit\\backend\\befit\\befit.application\\applicationextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9417DB9-FDD6-4271-AF69-4D7E8AC1D7B8}|befit.application\\befit.application.csproj|solutionrelative:befit.application\\applicationextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,73 +18,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IMenuItemsService.cs",
-              "DocumentMoniker": "D:\\befit\\backend\\befit\\befit.application\\Contracts\\IMenuItemsService.cs",
-              "RelativeDocumentMoniker": "befit.application\\Contracts\\IMenuItemsService.cs",
-              "ToolTip": "D:\\befit\\backend\\befit\\befit.application\\Contracts\\IMenuItemsService.cs",
-              "RelativeToolTip": "befit.application\\Contracts\\IMenuItemsService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-19T12:26:29.175Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\befit\\backend\\befit\\befit.api\\appsettings.json",
-              "RelativeDocumentMoniker": "befit.api\\appsettings.json",
-              "ToolTip": "D:\\befit\\backend\\befit\\befit.api\\appsettings.json",
-              "RelativeToolTip": "befit.api\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-19T12:23:14.457Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DataAccessExtensions.cs",
-              "DocumentMoniker": "D:\\befit\\backend\\befit\\befit.dataAccess\\DataAccessExtensions.cs",
-              "RelativeDocumentMoniker": "befit.dataAccess\\DataAccessExtensions.cs",
-              "ToolTip": "D:\\befit\\backend\\befit\\befit.dataAccess\\DataAccessExtensions.cs",
-              "RelativeToolTip": "befit.dataAccess\\DataAccessExtensions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-19T12:20:02.399Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\befit\\backend\\befit\\befit.api\\Program.cs",
-              "RelativeDocumentMoniker": "befit.api\\Program.cs",
-              "ToolTip": "D:\\befit\\backend\\befit\\befit.api\\Program.cs",
-              "RelativeToolTip": "befit.api\\Program.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAAwBEAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-19T12:19:25.072Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MenuSpecificationBuilder.cs",
-              "DocumentMoniker": "D:\\befit\\backend\\befit\\befit.core\\Builders\\MenuSpecificationBuilder.cs",
-              "RelativeDocumentMoniker": "befit.core\\Builders\\MenuSpecificationBuilder.cs",
-              "ToolTip": "D:\\befit\\backend\\befit\\befit.core\\Builders\\MenuSpecificationBuilder.cs",
-              "RelativeToolTip": "befit.core\\Builders\\MenuSpecificationBuilder.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAuwBsAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-19T12:09:48.085Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -137,100 +28,22 @@
               "RelativeDocumentMoniker": "befit.application\\Services\\MenuItemsService.cs",
               "ToolTip": "D:\\befit\\backend\\befit\\befit.application\\Services\\MenuItemsService.cs",
               "RelativeToolTip": "befit.application\\Services\\MenuItemsService.cs",
-              "ViewState": "AgIAAGcAAAAAAAAAAAAuwHUAAABbAAAAAAAAAA==",
+              "ViewState": "AgIAACsAAAAAAAAAAAAjwBYAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-19T11:59:26.964Z",
+              "WhenOpened": "2025-10-19T18:47:18.84Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ExpressionExtensions.cs",
-              "DocumentMoniker": "D:\\befit\\backend\\befit\\befit.core\\ExpressionHelpers\\ExpressionExtensions.cs",
-              "RelativeDocumentMoniker": "befit.core\\ExpressionHelpers\\ExpressionExtensions.cs",
-              "ToolTip": "D:\\befit\\backend\\befit\\befit.core\\ExpressionHelpers\\ExpressionExtensions.cs",
-              "RelativeToolTip": "befit.core\\ExpressionHelpers\\ExpressionExtensions.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAuwBUAAAA9AAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "ApplicationExtensions.cs",
+              "DocumentMoniker": "D:\\befit\\backend\\befit\\befit.application\\ApplicationExtensions.cs",
+              "RelativeDocumentMoniker": "befit.application\\ApplicationExtensions.cs",
+              "ToolTip": "D:\\befit\\backend\\befit\\befit.application\\ApplicationExtensions.cs",
+              "RelativeToolTip": "befit.application\\ApplicationExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-19T12:12:53.089Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "SpecificationBuilder.cs",
-              "DocumentMoniker": "D:\\befit\\backend\\befit\\befit.core\\Builders\\SpecificationBuilder.cs",
-              "RelativeDocumentMoniker": "befit.core\\Builders\\SpecificationBuilder.cs",
-              "ToolTip": "D:\\befit\\backend\\befit\\befit.core\\Builders\\SpecificationBuilder.cs",
-              "RelativeToolTip": "befit.core\\Builders\\SpecificationBuilder.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAqwB0AAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-19T12:09:46.159Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ISpecificationBuilder.cs",
-              "DocumentMoniker": "D:\\befit\\backend\\befit\\befit.core\\Contracts\\ISpecificationBuilder.cs",
-              "RelativeDocumentMoniker": "befit.core\\Contracts\\ISpecificationBuilder.cs",
-              "ToolTip": "D:\\befit\\backend\\befit\\befit.core\\Contracts\\ISpecificationBuilder.cs",
-              "RelativeToolTip": "befit.core\\Contracts\\ISpecificationBuilder.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAiwCEAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-19T12:09:25.078Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "MenuItemsController.cs",
-              "DocumentMoniker": "D:\\befit\\backend\\befit\\befit.api\\Controllers\\MenuItemsController.cs",
-              "RelativeDocumentMoniker": "befit.api\\Controllers\\MenuItemsController.cs",
-              "ToolTip": "D:\\befit\\backend\\befit\\befit.api\\Controllers\\MenuItemsController.cs",
-              "RelativeToolTip": "befit.api\\Controllers\\MenuItemsController.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAAACcAAABlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-19T11:58:15.198Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "MenuItemSpecification.cs",
-              "DocumentMoniker": "D:\\befit\\backend\\befit\\befit.core\\Specifications\\MenuItemSpecification.cs",
-              "RelativeDocumentMoniker": "befit.core\\Specifications\\MenuItemSpecification.cs",
-              "ToolTip": "D:\\befit\\backend\\befit\\befit.core\\Specifications\\MenuItemSpecification.cs",
-              "RelativeToolTip": "befit.core\\Specifications\\MenuItemSpecification.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-19T11:57:56.024Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "BaseSpecification.cs",
-              "DocumentMoniker": "D:\\befit\\backend\\befit\\befit.core\\Specifications\\BaseSpecification.cs",
-              "RelativeDocumentMoniker": "befit.core\\Specifications\\BaseSpecification.cs",
-              "ToolTip": "D:\\befit\\backend\\befit\\befit.core\\Specifications\\BaseSpecification.cs",
-              "RelativeToolTip": "befit.core\\Specifications\\BaseSpecification.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAiwA0AAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-19T11:57:45.16Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "BaseRepository.cs",
-              "DocumentMoniker": "D:\\befit\\backend\\befit\\befit.dataAccess\\Repositories\\BaseRepository.cs",
-              "RelativeDocumentMoniker": "befit.dataAccess\\Repositories\\BaseRepository.cs",
-              "ToolTip": "D:\\befit\\backend\\befit\\befit.dataAccess\\Repositories\\BaseRepository.cs",
-              "RelativeToolTip": "befit.dataAccess\\Repositories\\BaseRepository.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAuwEoAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-19T11:50:30.993Z",
+              "WhenOpened": "2025-10-19T18:46:55.653Z",
               "EditorCaption": ""
             }
           ]

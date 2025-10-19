@@ -92,9 +92,10 @@ namespace befit.api.Controllers
 
         [HttpDelete]
         [Authorize(Roles = "ADMIN")]
-        public async Task<IActionResult> Delete([FromBody] MenuItemDeleteDto menuItem)
+        [Route("{id}")]
+        public async Task<IActionResult> Delete([FromRoute] int id)
         {
-            MenuItemDeleteDto? deletedMenuItem = await _menuItemsService.DeleteMenuItem(menuItem);
+            MenuItemDeleteDto? deletedMenuItem = await _menuItemsService.DeleteMenuItem(id);
 
             if (deletedMenuItem == null)
                 return NotFound();

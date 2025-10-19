@@ -20,16 +20,18 @@ namespace befit.application.Services
     {
         private IUnitOfWork _unitOfWork;
         private IMenuItemRepository repository;
+        private IFileService _fileService;
 
-        public MenuItemsService(IUnitOfWork unitOfWork)
+        public MenuItemsService(IUnitOfWork unitOfWork, IFileService fileService)
         {
             _unitOfWork = unitOfWork;
             repository = _unitOfWork.MenuItemRepository;
+            _fileService = fileService;
         }
 
         public async Task<object?> GetMenuItemById(int id, Roles? role)
         {
-            object? dto=null;
+            object? dto = null;
             MenuItem? menuItemEntity = await repository.GetById(id);
 
             if (menuItemEntity is null)
@@ -39,13 +41,13 @@ namespace befit.application.Services
             {
                 case null:
                 case Roles.USER:
-                    dto = GetMenuItemDetailForUser(id);
+                    dto = await GetMenuItemDetailForUser(id);
                     break;
                 case Roles.ADMIN:
+                    dto = await GetMenuItemDetailForAdmin(id);
                     break;
                 case Roles.CHEF:
-                    break;
-                case Roles.DELIVERY_GUY:
+                    dto = await GetMenuItemDetailForChef(id);
                     break;
             }
 
@@ -95,14 +97,47 @@ namespace befit.application.Services
             return await repository.GetAll(specification);
         }
 
-        public Task<IEnumerable<MenuItemListAdminDto>> GetMenuItemsListForAdmin(MenuItemsAdminOptions options)
+        public async Task<IEnumerable<MenuItemListAdminDto>> GetMenuItemsListForAdmin(MenuItemsAdminOptions options)
         {
-            throw new NotImplementedException();
+            var builder = new MenuSpecificationBuilder<MenuItemListAdminDto>();
+            var director = new MenuItemSpecificationDirector<MenuItemListAdminDto>(builder);
+
+            var criteria = new List<Expression<Func<MenuItem, bool>>>();
+
+            if (options.MaxPrice != null)
+                criteria.Add(m => m.Price < options.MaxPrice);
+
+            if (options.MinPrice != null)
+                criteria.Add(m => m.Price > options.MinPrice);
+
+            var specification = director.MakePaginatedSpecificationWithFilters(options.PageNo, options.ItemsPerPage, options.CategoryId,
+               criteria, options.SortBy, options.IsAscending, m => new MenuItemListAdminDto
+               {
+                   Id = m.Id,
+                   Name = m.Name,
+                   CategoryId = m.CategoryId,
+                   Price = m.Price,
+                   Picture = m.Picture,
+               });
+
+            return await repository.GetAll(specification);
         }
 
-        public Task<IEnumerable<MenuItemListChefDto>> GetMenuItemsListForChef(MenuItemsChefOptions options)
+        public async Task<IEnumerable<MenuItemListChefDto>> GetMenuItemsListForChef(MenuItemsChefOptions options)
         {
-            throw new NotImplementedException();
+            var builder = new MenuSpecificationBuilder<MenuItemListChefDto>();
+            var director = new MenuItemSpecificationDirector<MenuItemListChefDto>(builder);
+
+            var specification = director.MakePaginatedSpecificationWithFilters(options.PageNo, options.ItemsPerPage, options.CategoryId,
+                Enumerable.Empty<Expression<Func<MenuItem, bool>>>(), options.SortBy, options.IsAscending, m => new MenuItemListChefDto
+                {
+                    Id = m.Id,
+                    Name = m.Name,
+                    PreparationTime = m.PreparationTime,
+                    Picture = m.Picture
+                });
+
+            return await repository.GetAll(specification);
         }
 
         public Task<MenuItemInsertResponseDto> CreateNewMenuItem(MenuItemInsertRequestDto menuItemInsertRequestDto)
@@ -115,7 +150,7 @@ namespace befit.application.Services
             throw new NotImplementedException();
         }
 
-        public Task<MenuItemDeleteDto?> DeleteMenuItem(MenuItemDeleteDto menuItemDeleteDto)
+        public Task<MenuItemDeleteDto?> DeleteMenuItem(int id)
         {
             throw new NotImplementedException();
         }
@@ -137,6 +172,49 @@ namespace befit.application.Services
                 Protein = m.Protein,
                 Carbohydrates = m.Carbohydrates
             }));
+        }
+
+        private async Task<MenuItemDetailChefDto?> GetMenuItemDetailForChef(int id)
+        {
+            var builder = new MenuSpecificationBuilder<MenuItemDetailChefDto>();
+            var director = new MenuItemSpecificationDirector<MenuItemDetailChefDto>(builder);
+
+            var specification = director.MakeProjectionOnlySpecification(m => new MenuItemDetailChefDto
+            {
+                Id = m.Id,
+                Name = m.Name,
+                Recipe = m.Recipe,
+                Picture = m.Picture,
+                PreparationTime = m.PreparationTime,
+                Video = m.Video
+            });
+
+            return await repository.GetById(id, specification);
+        }
+
+        private async Task<MenuItemDetailAdminDto?> GetMenuItemDetailForAdmin(int id)
+        {
+            var builder = new MenuSpecificationBuilder<MenuItemDetailAdminDto>();
+            var director = new MenuItemSpecificationDirector<MenuItemDetailAdminDto>(builder);
+
+            var specification = director.MakeProjectionOnlySpecification( m => new MenuItemDetailAdminDto
+            {
+                Id = m.Id,
+                Name = m.Name,
+                Description = m.Description,
+                Calories = m.Calories,
+                Carbohydrates = m.Carbohydrates,
+                CategoryId = m.CategoryId,
+                Fats = m.Fats,
+                Picture = m.Picture,
+                PreparationTime = m.PreparationTime,
+                Price = m.Price,
+                Video = m.Video,
+                Recipe = m.Recipe,
+                Protein = m.Protein
+            });
+
+            return await repository.GetById(id, specification);
         }
     }
 }
