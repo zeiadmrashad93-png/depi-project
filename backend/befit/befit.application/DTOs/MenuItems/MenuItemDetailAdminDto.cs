@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace befit.dataAccess.Contracts
+namespace befit.application.DTOs.MenuItems
 {
-    public interface IUnitOfWork
+    public class MenuItemDetailAdminDto
     {
-
-        void SaveChanges();
     }
 }
