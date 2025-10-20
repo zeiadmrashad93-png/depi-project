@@ -1,0 +1,36 @@
+<div class="menu-section">
+<div class="container-section-title">
+    <h2>Our Menu</h2>
+    <p><span>Check Our</span> <span class="description-title"> befit </span>Menu</p>
+  </div>
+
+  <ul class="nav nav-tabs d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100" role="tablist">
+
+    <li class="nav-item">
+      <a       class="nav-link"  [class.active]="activeTab === 'starters'"  (click)="setActive('starters')">
+        <h4>Starters</h4>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a       class="nav-link" [class.active]="activeTab === 'Breakfast'" (click)="setActive('Breakfast')">
+        <h4>Breakfast</h4>
+      </a>
+
+    </li>
+    <li class="nav-item">
+      <a       class="nav-link" [class.active]="activeTab === 'Lunch'"  (click)="setActive('Lunch')">
+        <h4>Lunch</h4>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a       class="nav-link" [class.active]="activeTab === 'Dinner'" (click)="setActive('Dinner')">
+        <h4>Dinner</h4>
+      </a>
+    </li>
+
+  </ul>
+</div>
+
+<app-product-card></app-product-card>
