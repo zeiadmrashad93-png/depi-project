@@ -19,7 +19,7 @@ namespace befit.api
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddDataAccessServices(builder.Configuration)
-                .AddApplicationServices();
+                .AddApplicationServices(builder.Configuration);
 
             builder.Services.AddAuthentication(options =>
             {
