@@ -39,9 +39,6 @@ namespace befit.api.Controllers
         {
             IEnumerable<MenuItemListUserDTO> result = await _menuItemsService.GetMenuItemsListForUser(options);
 
-            if (result.Count() == 0)
-                return NotFound();
-
             return Ok(result);
         }
 
@@ -51,9 +48,6 @@ namespace befit.api.Controllers
         public async Task<IActionResult> Get([FromQuery] MenuItemsAdminOptions options)
         {
             IEnumerable<MenuItemListAdminDto> result =await _menuItemsService.GetMenuItemsListForAdmin(options);
-            
-            if (result.Count() == 0)
-                return NotFound();
 
             return Ok(result);
         }
@@ -64,9 +58,6 @@ namespace befit.api.Controllers
         public async Task<IActionResult> Get([FromQuery] MenuItemsChefOptions options)
         {
             IEnumerable<MenuItemListChefDto> result = await _menuItemsService.GetMenuItemsListForChef(options);
-
-            if (result.Count() == 0)
-                return NotFound();
 
             return Ok(result);
         }
