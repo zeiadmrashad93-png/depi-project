@@ -27,19 +27,21 @@ namespace befit.dataAccess.Repositories
            await dbSet.AddAsync(entity);
         }
 
-        public async Task Delete(int id)
+        public async Task<TEntity?> Delete(int id)
         {
             TEntity? entityToDelete = await dbSet.FindAsync(id);
 
             if (entityToDelete != null)
                 dbSet.Remove(entityToDelete);
+
+            return entityToDelete;
         }
 
         public async Task<IEnumerable<TResult>> GetAll<TResult>(IBaseSpecification<TEntity, TID, TResult> specification)
         {
             IQueryable<TEntity> data = dbSet;
 
-            return await GetQuery(data, specification)
+            return await getQuery(data, specification)
                 .Select(specification.Selector)
                 .ToListAsync(); ;
         }
@@ -67,7 +69,7 @@ namespace befit.dataAccess.Repositories
             dbSet.Update(entity);
         }
 
-        private IQueryable<TEntity> GetQuery<TResult>(IQueryable<TEntity> data, IBaseSpecification<TEntity, TID, TResult> specification)
+        private IQueryable<TEntity> getQuery<TResult>(IQueryable<TEntity> data, IBaseSpecification<TEntity, TID, TResult> specification)
         {
             if (specification.Criteria != null)
                 data = data.Where(specification.Criteria);

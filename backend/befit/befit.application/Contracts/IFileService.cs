@@ -8,5 +8,7 @@ namespace befit.application.Contracts
 {
     internal interface IFileService
     {
+        Task<string> Upload(FileStream file);
+        Task Delete(string filePath);
     }
 }

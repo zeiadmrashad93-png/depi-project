@@ -73,8 +73,11 @@ namespace befit.api.Controllers
 
         [HttpPost]
         [Authorize(Roles = "ADMIN")]
-        public async Task<IActionResult> Post([FromBody] MenuItemInsertRequestDto menuItem)
+        public async Task<IActionResult> Post([FromForm] MenuItemInsertRequestDto menuItem, IFormFile picture, IFormFile video)
         {
+            menuItem.Picture = (FileStream)picture.OpenReadStream();
+            menuItem.Video = (FileStream)video.OpenReadStream();
+
             return Ok(await _menuItemsService.CreateNewMenuItem(menuItem));
         }
 

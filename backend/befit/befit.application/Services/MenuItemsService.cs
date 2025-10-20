@@ -12,7 +12,6 @@ using befit.core.Builders;
 using befit.core.Contracts;
 using befit.core.Entities;
 using befit.core.Specifications;
-using CloudinaryDotNet.Actions;
 
 namespace befit.application.Services
 {
@@ -41,13 +40,13 @@ namespace befit.application.Services
             {
                 case null:
                 case Roles.USER:
-                    dto = await GetMenuItemDetailForUser(id);
+                    dto = await getMenuItemDetailForUser(id);
                     break;
                 case Roles.ADMIN:
-                    dto = await GetMenuItemDetailForAdmin(id);
+                    dto = await getMenuItemDetailForAdmin(id);
                     break;
                 case Roles.CHEF:
-                    dto = await GetMenuItemDetailForChef(id);
+                    dto = await getMenuItemDetailForChef(id);
                     break;
             }
 
@@ -140,22 +139,87 @@ namespace befit.application.Services
             return await repository.GetAll(specification);
         }
 
-        public Task<MenuItemInsertResponseDto> CreateNewMenuItem(MenuItemInsertRequestDto menuItemInsertRequestDto)
+        public async Task<MenuItemInsertResponseDto> CreateNewMenuItem(MenuItemInsertRequestDto menuItemInsertRequestDto)
         {
-            throw new NotImplementedException();
+            var menuItemEntity = new MenuItem
+            {
+                Name = menuItemInsertRequestDto.Name,
+                Description = menuItemInsertRequestDto.Description,
+                Recipe = menuItemInsertRequestDto.Recipe,
+                Calories = menuItemInsertRequestDto.Calories,
+                Carbohydrates = menuItemInsertRequestDto.Carbohydrates,
+                CategoryId = menuItemInsertRequestDto.CategoryId,
+                Fats = menuItemInsertRequestDto.Fats,
+                Protein = menuItemInsertRequestDto.Protein,
+                PreparationTime = menuItemInsertRequestDto.PreparationTime,
+                Price = menuItemInsertRequestDto.Price,
+                Picture = await _fileService.Upload(menuItemInsertRequestDto.Picture),
+                Video = menuItemInsertRequestDto.Video is null ? null : await _fileService.Upload(menuItemInsertRequestDto.Video)
+            };
+
+            await repository.Create(menuItemEntity);
+
+            await _unitOfWork.SaveChanges();
+
+            return new MenuItemInsertResponseDto
+            {
+                Id = menuItemEntity.Id,
+                Name = menuItemEntity.Name,
+                Description = menuItemEntity.Description,
+                Recipe = menuItemEntity.Recipe,
+                Calories = menuItemEntity.Calories,
+                Carbohydrates= menuItemEntity.Carbohydrates,
+                CategoryId = menuItemEntity.CategoryId,
+                Fats = menuItemEntity.Fats,
+                Protein = menuItemEntity.Protein,
+                PreparationTime = menuItemEntity.PreparationTime,
+                Price = menuItemEntity.Price,
+                Picture = menuItemEntity.Picture,
+                Video = menuItemEntity.Video
+            };
         }
 
-        public Task<MenuItemUpdateDto?> UpdateMenuItem(MenuItemUpdateDto menuItemUpdateDto)
+        public async Task<MenuItemUpdateDto?> UpdateMenuItem(MenuItemUpdateDto menuItemUpdateDto)
         {
-            throw new NotImplementedException();
+            var menuItemEntity = new MenuItem()
+            {
+                Id = menuItemUpdateDto.Id,
+                Name = menuItemUpdateDto.Name,
+                Description = menuItemUpdateDto.Description,
+                Recipe = menuItemUpdateDto.Recipe,
+                Calories = menuItemUpdateDto.Calories,
+                Carbohydrates = menuItemUpdateDto.Carbohydrates,
+                CategoryId = menuItemUpdateDto.CategoryId,
+                Fats = menuItemUpdateDto.Fats,
+                Protein = menuItemUpdateDto.Protein,
+                Picture = await _fileService.Upload(menuItemUpdateDto.Picture),
+                Video = menuItemUpdateDto.Video == null? null : await _fileService.Upload(menuItemUpdateDto.Video),
+                PreparationTime = menuItemUpdateDto.PreparationTime,
+                Price = menuItemUpdateDto.Price
+            };
+
+            repository.Update(menuItemEntity);
+
+            await _unitOfWork.SaveChanges();
+
+            return menuItemUpdateDto;
         }
 
-        public Task DeleteMenuItem(int id)
+        public async Task DeleteMenuItem(int id)
         {
-            throw new NotImplementedException();
+            var deletedEntity = await repository.Delete(id);
+
+            await _unitOfWork.SaveChanges();
+
+            if (deletedEntity != null)
+            {
+                await _fileService.Delete(deletedEntity.Picture);
+                if (deletedEntity.Video != null)
+                    await _fileService.Delete(deletedEntity.Video);
+            }
         }
 
-        private async Task<MenuItemDetailUserDTO?> GetMenuItemDetailForUser(int id)
+        private async Task<MenuItemDetailUserDTO?> getMenuItemDetailForUser(int id)
         {
             MenuSpecificationBuilder<MenuItemDetailUserDTO> builder = new MenuSpecificationBuilder<MenuItemDetailUserDTO>();
             MenuItemSpecificationDirector<MenuItemDetailUserDTO> director
@@ -174,7 +238,7 @@ namespace befit.application.Services
             }));
         }
 
-        private async Task<MenuItemDetailChefDto?> GetMenuItemDetailForChef(int id)
+        private async Task<MenuItemDetailChefDto?> getMenuItemDetailForChef(int id)
         {
             var builder = new MenuSpecificationBuilder<MenuItemDetailChefDto>();
             var director = new MenuItemSpecificationDirector<MenuItemDetailChefDto>(builder);
@@ -192,7 +256,7 @@ namespace befit.application.Services
             return await repository.GetById(id, specification);
         }
 
-        private async Task<MenuItemDetailAdminDto?> GetMenuItemDetailForAdmin(int id)
+        private async Task<MenuItemDetailAdminDto?> getMenuItemDetailForAdmin(int id)
         {
             var builder = new MenuSpecificationBuilder<MenuItemDetailAdminDto>();
             var director = new MenuItemSpecificationDirector<MenuItemDetailAdminDto>(builder);
