@@ -1,0 +1,65 @@
+.menu-section {
+    margin: 0;
+    padding: 10px;
+  }
+  
+  .container-section-title {
+    text-align: center;
+  }
+  
+  .container-section-title h2 {
+    color: #21252980;
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0;
+    text-transform: uppercase;
+  }
+  
+  .container-section-title p {
+    color: #21252980;
+    margin: 10px 0 0 0;
+    font-size: 40px;
+    font-weight: 500;
+    font-family: 'Amatic SC', sans-serif;
+  }
+  
+  .description-title {
+    color: #1A4D2E;
+  }
+  
+  /* Tabs styling */
+  .nav-tabs {
+    border-bottom: none;
+    justify-content: center;
+  }
+  
+  .nav-tabs .nav-link {
+    border: none;
+    border-bottom: 2px solid #dee2e6; /* light gray default */
+    color: #333;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    margin: 0 10px;
+    padding: 10px 15px;
+  }
+  
+  .nav-tabs .nav-link:hover {
+    border-bottom-color: #1A4D2E; /* green on hover */
+    color: #1A4D2E;
+  }
+  
+  .nav-tabs .nav-link.active {
+    border-bottom-color: #1A4D2E; /* green when active */
+    color: #1A4D2E;
+    font-weight: 600;
+  }
+  
+  .nav-tabs .nav-link h4 {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0;
+    cursor: pointer;
+    user-select: none;
+  }
+  
