@@ -10,6 +10,8 @@ namespace befit.core.Contracts
     {
         IMenuItemRepository MenuItemRepository { get; }
 
+        ICategoryRepository CategoryRepository { get; }
+
         Task SaveChanges();
     }
 }

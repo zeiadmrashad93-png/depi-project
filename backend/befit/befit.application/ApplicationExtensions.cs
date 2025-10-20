@@ -23,6 +23,8 @@ namespace befit.application
 
             services.AddScoped<IMenuItemsService, MenuItemsService>();
 
+            services.AddScoped<ICategoryService, CategoryService>();
+
             return services;
         }
     }
