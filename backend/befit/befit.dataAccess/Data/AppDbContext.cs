@@ -4,13 +4,17 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using befit.core.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 
 namespace befit.dataAccess.Data
 {
-    internal class AppDbContext:DbContext
+    internal class AppDbContext:IdentityDbContext
     {
+        public DbSet<MenuItem> MenuItems { get; set; }
+        public DbSet<Category> Categories { get; set; }
         public AppDbContext(DbContextOptions options):base(options)
         {
             
