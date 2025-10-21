@@ -31,10 +31,6 @@ namespace befit.application.Services
         public async Task<object?> GetMenuItemById(int id, Roles? role)
         {
             object? dto = null;
-            MenuItem? menuItemEntity = await repository.GetById(id);
-
-            if (menuItemEntity is null)
-                return null;
 
             switch(role)
             {
