@@ -43,7 +43,7 @@ namespace befit.dataAccess.Repositories
 
             return await getQuery(data, specification)
                 .Select(specification.Selector)
-                .ToListAsync(); ;
+                .ToListAsync();
         }
 
         public async Task<IEnumerable<TEntity>> GetAll()
