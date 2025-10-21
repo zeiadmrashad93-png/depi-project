@@ -179,7 +179,7 @@ namespace befit.application.Services
             };
         }
 
-        public async Task<MenuItemUpdateDto?> UpdateMenuItem(MenuItemUpdateDto menuItemUpdateDto)
+        public async Task<MenuItemUpdateResponseDto?> UpdateMenuItem(MenuItemUpdateRequestDto menuItemUpdateDto)
         {
             var menuItemEntity = new MenuItem()
             {
@@ -198,11 +198,31 @@ namespace befit.application.Services
                 Price = menuItemUpdateDto.Price
             };
 
+            await _fileService.Delete(await repository.GetById(menuItemUpdateDto.Id, new MenuItemSpecification<string>
+            {
+                Selector = m => m.Picture
+            }));
+
             repository.Update(menuItemEntity);
 
             await _unitOfWork.SaveChanges();
 
-            return menuItemUpdateDto;
+            return new MenuItemUpdateResponseDto
+            {
+                Id = menuItemEntity.Id,
+                Name = menuItemEntity.Name,
+                Description = menuItemEntity.Description,
+                Recipe = menuItemEntity.Recipe,
+                Calories = menuItemEntity.Calories,
+                CategoryId = menuItemEntity.CategoryId,
+                Fats = menuItemEntity.Fats,
+                Protein = menuItemEntity.Protein,
+                Carbohydrates = menuItemEntity.Carbohydrates,
+                Picture = menuItemEntity.Picture,
+                Video = menuItemEntity.Video,
+                PreparationTime = menuItemEntity.PreparationTime,
+                Price = menuItemEntity.Price
+            };
         }
 
         public async Task DeleteMenuItem(int id)

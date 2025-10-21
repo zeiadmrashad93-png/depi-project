@@ -74,9 +74,12 @@ namespace befit.api.Controllers
 
         [HttpPut]
         [Authorize(Roles = "ADMIN")]
-        public async Task<IActionResult> Put([FromBody] MenuItemUpdateDto menuItem)
+        public async Task<IActionResult> Put([FromForm] MenuItemUpdateRequestDto menuItem, IFormFile picture, IFormFile video)
         {
-            MenuItemUpdateDto? updatedMenuItem = await _menuItemsService.UpdateMenuItem(menuItem);
+            menuItem.Picture = (FileStream)picture.OpenReadStream();
+            menuItem.Video = (FileStream)video.OpenReadStream();
+
+            MenuItemUpdateResponseDto? updatedMenuItem = await _menuItemsService.UpdateMenuItem(menuItem);
 
             if (updatedMenuItem == null)
                 return NotFound();
