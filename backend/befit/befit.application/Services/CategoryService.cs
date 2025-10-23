@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using befit.application.Contracts;
 using befit.application.DTOs.Categories;
-using befit.core.Contracts;
-using befit.core.Entities;
+using befit.domain.Contracts;
+using befit.domain.Entities;
 
 namespace befit.application.Services
 {

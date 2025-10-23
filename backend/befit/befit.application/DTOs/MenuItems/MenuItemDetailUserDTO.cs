@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace befit.application.DTOs.MenuItems
 {
-    public class MenuItemDetailUserDTO
+    public class MenuItemDetailChefDTO
     {
         public int Id { get; set; }
         public string Name { get; set; }

@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using befit.application.DTOs.Categories;
-using befit.core.Entities;
 
 namespace befit.application.Contracts
 {

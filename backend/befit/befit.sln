@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "befit.api", "befit.api\befi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "befit.application", "befit.application\befit.application.csproj", "{F9417DB9-FDD6-4271-AF69-4D7E8AC1D7B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "befit.dataAccess", "befit.dataAccess\befit.dataAccess.csproj", "{DBD06F4F-37AA-40D8-9CDC-6E56DE02C01E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "befit.infrastructure", "befit.infrastructure\befit.infrastructure.csproj", "{DBD06F4F-37AA-40D8-9CDC-6E56DE02C01E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "befit.core", "befit.core\befit.core.csproj", "{51C5BDE4-5517-4B69-A232-0C457A68CA40}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "befit.domain", "befit.domain\befit.domain.csproj", "{51C5BDE4-5517-4B69-A232-0C457A68CA40}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

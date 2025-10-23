@@ -22,17 +22,42 @@ namespace befit.api.Controllers
 
         [HttpGet]
         [Route("{id}")]
-        public async Task<IActionResult> Get([FromRoute] int id)
+        public async Task<IActionResult> GetForUser([FromRoute] int id)
         {
-            Claim? roleClaim = User.FindFirst(ClaimTypes.Role);
-            Roles? role = roleClaim is null? null:Enum.Parse<Roles>(roleClaim.Value);
-            object? result = await _menuItemsService.GetMenuItemById(id, role);
+            MenuItemDetailChefDTO? result = await _menuItemsService.GetMenuItemDetailForUser(id);
 
             if (result == null)
                 return NotFound();
 
             return Ok(result);
         }
+
+        [HttpGet]
+        [Route("admin/{id}")]
+        [Authorize(Roles = "ADMIN")]
+        public async Task<IActionResult> GetForAdmin([FromRoute] int id)
+        {
+            MenuItemDetailAdminDto? result = await _menuItemsService.GetMenuItemDetailForAdmin(id);
+
+            if (result == null)
+                return NotFound();
+
+            return Ok(result);
+        }
+
+        [HttpGet]
+        [Route("chef/{id}")]
+        [Authorize(Roles = "CHEF")]
+        public async Task<IActionResult> GetForChef([FromRoute] int id)
+        {
+            MenuItemDetailChefDto? result = await _menuItemsService.GetMenuItemDetailForChef(id);
+
+            if (result == null)
+                return NotFound();
+
+            return Ok(result);
+        }
+
 
         [HttpGet]
         public async Task<IActionResult> Get([FromQuery] MenuItemsUserOptions options)
@@ -63,6 +88,7 @@ namespace befit.api.Controllers
         }
 
         [HttpPost]
+        [Route("admin")]
         [Authorize(Roles = "ADMIN")]
         public async Task<IActionResult> Post([FromForm] MenuItemInsertRequestDto menuItem, IFormFile picture, IFormFile video)
         {
@@ -73,6 +99,7 @@ namespace befit.api.Controllers
         }
 
         [HttpPut]
+        [Route("admin")]
         [Authorize(Roles = "ADMIN")]
         public async Task<IActionResult> Put([FromForm] MenuItemUpdateRequestDto menuItem, IFormFile picture, IFormFile video)
         {
@@ -88,6 +115,7 @@ namespace befit.api.Controllers
         }
 
         [HttpDelete]
+        [Route("admin")]
         [Authorize(Roles = "ADMIN")]
         [Route("{id}")]
         public async Task<IActionResult> Delete([FromRoute] int id)

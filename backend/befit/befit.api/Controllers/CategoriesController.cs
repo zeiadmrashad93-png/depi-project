@@ -25,6 +25,7 @@ namespace befit.api.Controllers
 
         [HttpPost]
         [Authorize(Roles = "ADMIN")]
+        [Route("admin")]
         public async Task<IActionResult> Post([FromForm] CategoryInsertDto categoryInsertDto)
         {
             return Ok(await _categoryService.AddCategory(categoryInsertDto));
@@ -32,6 +33,7 @@ namespace befit.api.Controllers
 
         [HttpPut]
         [Authorize(Roles = "ADMIN")]
+        [Route("admin")]
         public async Task<IActionResult> Put([FromForm] CategoryItemDto categoryUpdateDto)
         {
             var result = await _categoryService.UpdateCategory(categoryUpdateDto);
@@ -43,8 +45,8 @@ namespace befit.api.Controllers
         }
 
         [HttpDelete]
-        [Route("{id}")]
         [Authorize(Roles = "ADMIN")]
+        [Route("admin/{id}")]
         public async Task<IActionResult> Delete([FromRoute] int id)
         {
             await _categoryService.DeleteCategory(id);

@@ -4,14 +4,14 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using befit.application.Builders;
 using befit.application.Contracts;
 using befit.application.DTOs.MenuItems;
 using befit.application.Enums;
 using befit.application.Options;
-using befit.core.Builders;
-using befit.core.Contracts;
-using befit.core.Entities;
-using befit.core.Specifications;
+using befit.application.Specifications;
+using befit.domain.Contracts;
+using befit.domain.Entities;
 
 namespace befit.application.Services
 {
@@ -28,26 +28,6 @@ namespace befit.application.Services
             _fileService = fileService;
         }
 
-        public async Task<object?> GetMenuItemById(int id, Roles? role)
-        {
-            object? dto = null;
-
-            switch(role)
-            {
-                case null:
-                case Roles.USER:
-                    dto = await getMenuItemDetailForUser(id);
-                    break;
-                case Roles.ADMIN:
-                    dto = await getMenuItemDetailForAdmin(id);
-                    break;
-                case Roles.CHEF:
-                    dto = await getMenuItemDetailForChef(id);
-                    break;
-            }
-
-            return dto;
-        }
 
         public async Task<IEnumerable<MenuItemListUserDTO>> GetMenuItemsListForUser(MenuItemsUserOptions options)
         {
@@ -235,13 +215,13 @@ namespace befit.application.Services
             }
         }
 
-        private async Task<MenuItemDetailUserDTO?> getMenuItemDetailForUser(int id)
+        public async Task<MenuItemDetailChefDTO?> GetMenuItemDetailForUser(int id)
         {
-            MenuSpecificationBuilder<MenuItemDetailUserDTO> builder = new MenuSpecificationBuilder<MenuItemDetailUserDTO>();
-            MenuItemSpecificationDirector<MenuItemDetailUserDTO> director
-                = new MenuItemSpecificationDirector<MenuItemDetailUserDTO>(builder);
+            MenuSpecificationBuilder<MenuItemDetailChefDTO> builder = new MenuSpecificationBuilder<MenuItemDetailChefDTO>();
+            MenuItemSpecificationDirector<MenuItemDetailChefDTO> director
+                = new MenuItemSpecificationDirector<MenuItemDetailChefDTO>(builder);
 
-            return await repository.GetById(id, director.MakeProjectionOnlySpecification(m => new MenuItemDetailUserDTO
+            return await repository.GetById(id, director.MakeProjectionOnlySpecification(m => new MenuItemDetailChefDTO
             {
                 Id = id,
                 Name = m.Name,
@@ -254,7 +234,7 @@ namespace befit.application.Services
             }));
         }
 
-        private async Task<MenuItemDetailChefDto?> getMenuItemDetailForChef(int id)
+        public async Task<MenuItemDetailChefDto?> GetMenuItemDetailForChef(int id)
         {
             var builder = new MenuSpecificationBuilder<MenuItemDetailChefDto>();
             var director = new MenuItemSpecificationDirector<MenuItemDetailChefDto>(builder);
@@ -272,7 +252,7 @@ namespace befit.application.Services
             return await repository.GetById(id, specification);
         }
 
-        private async Task<MenuItemDetailAdminDto?> getMenuItemDetailForAdmin(int id)
+        public async Task<MenuItemDetailAdminDto?> GetMenuItemDetailForAdmin(int id)
         {
             var builder = new MenuSpecificationBuilder<MenuItemDetailAdminDto>();
             var director = new MenuItemSpecificationDirector<MenuItemDetailAdminDto>(builder);
